@@ -1,0 +1,16 @@
+<toolSet name="External Tools">
+  <tool name="Php-cs-fixer" description="Run php-cs-fixer over current class" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="/usr/local/bin/php-cs-fixer" />
+      <option name="PARAMETERS" value="--level=psr2 --verbose --config-file=.php_cs.local.php --dry-run fix &quot;$FileDir$/$FileName$&quot;" />
+      <option name="WORKING_DIRECTORY" value="$ProjectFileDir$" />
+    </exec>
+  </tool>
+  <tool name="php-cs" description="Runs phpcs on your file" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="/usr/local/bin/phpcs" />
+      <option name="PARAMETERS" value="--standard=PSR2 --extensions=php &quot;$FileDir$/$FileName$&quot;" />
+      <option name="WORKING_DIRECTORY" value="$ProjectFileDir$" />
+    </exec>
+  </tool>
+</toolSet>
