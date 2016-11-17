@@ -159,28 +159,103 @@ alias tnew="tmux new -s "
 alias tls="tmux ls"
 alias ta="tmux a -t "
 alias tkill="tmux kill-session -t "
+alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim"
+alias selenium="java -jar /Users/Samir/Workspace/akeneo/selenium/selenium-server-standalone-2.52.0.jar"
 
 #alias vim='mvim'
 
 # Programs shortcuts
-alias todo='mvim ~/Todo/work.org'
-alias sync_todo='rsync -azP ~/Todo/* samir@vps.samirboulil.com:~/Todo/'
-alias mongodb_start='brew services start mongodb'
-alias postgres_start='brew services start postgres'
-alias mysql_start='mysql.server start'
+alias mongos='brew services restart mongodb'
+alias mongok='brew services stop mongodb'
+
+alias mys='mysql.server restart'
+alias myk='mysql.server stop'
+
+alias php-config='vim /usr/local/etc/php/5.6/php.ini'
+alias php-xdebug-off='cp /usr/local/etc/php/5.6/conf.d/ext-xdebug.ini{_deactivate,}'
+alias php-xdebug-on='cp /usr/local/etc/php/5.6/conf.d/ext-xdebug.ini{_activate,}'
+
+alias aps='sudo apachectl restart'
+alias apk='sudo apachectl stop'
+alias apconf='vim /usr/local/etc/apache2/2.4/httpd.conf'
+alias apvhostconf='vim /usr/local/etc/apache2/2.4/extra/httpd-vhosts.conf'
+
+alias cl='rm -rf app/cache/* && rm -rf app/logs/* && echo "Cache & logs cleared!"'
+alias gofront='rm -Rf ./app/cache/* ./web/bundles/* ./web/css/* ./web/js/*; app/console pim:install:ass -e=prod; app/console assets:install --symlink web'
+alias sf='app/console'
 
 # Servers
 alias arkade='ssh -p 2222 samirboulil@arkade.info -t tmux a'
+alias vm='ssh julien@localhost -p 2222'
 
-alias wks='cd /Users/samir.boulil/Workspace/'
-alias desk='cd /Users/samir.boulil/Desktop'
-alias pmp_3='cd /Users/samir.boulil/Workspace/pyMarketPlaces_3 && workon pmp_3'
-# V3
-alias pmp_4='cd /Users/samir.boulil/Workspace/pyMarketPlaces && workon pmp_4'
-alias pma='cd /Users/samir.boulil/Workspace/pocketMoney/Api && workon PM'
-alias pmc='cd /Users/samir.boulil/Workspace/pocketMoney/Client'
-alias bing='cd /Users/samir.boulil/Workspace/bingShopping'
+# Paths
+alias wk='cd /Users/Samir/Workspace/'
+alias ak='cd /Users/Samir/Workspace/akeneo/'
 
+alias ped13='cd /Users/Samir/Workspace/akeneo/ped13'
+alias ped13w='open http://ped13.dev'
+alias ped13mo='cd /Users/Samir/Workspace/akeneo/ped13mo'
+alias ped13mow='open http://ped13mo.dev'
 
-alias m='./manage.py'
-alias docker_start='. "/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh"'
+alias pcd13='cd /Users/Samir/Workspace/akeneo/pcd13'
+alias pcd13w='open http://pcd13.dev'
+alias pcd13mo='cd /Users/Samir/Workspace/akeneo/pcd13mo'
+alias pcd13mow='open http://pcd13mo.dev'
+
+alias ped14='cd /Users/Samir/Workspace/akeneo/ped14'
+alias ped14w='open http://ped14.dev'
+alias ped14mo='cd /Users/Samir/Workspace/akeneo/ped14mo'
+alias ped14mow='open http://ped14.devmo'
+
+alias pcd14='cd /Users/Samir/Workspace/akeneo/pcd14'
+alias pcd14w='open http://pcd14.dev'
+alias pcd14mo='cd /Users/Samir/Workspace/akeneo/pcd14mo'
+alias pcd14mow='open http://pcd14mo.dev'
+
+alias ped15='cd /Users/Samir/Workspace/akeneo/ped15'
+alias ped15w='open http://ped15.dev'
+alias ped15mo='cd /Users/Samir/Workspace/akeneo/ped15mo'
+alias ped15mow='open http://ped15mo.dev'
+
+alias pcd15='cd /Users/Samir/Workspace/akeneo/pcd15'
+alias pcd15w='open http://pcd15.dev'
+alias pcd15mo='cd /Users/Samir/Workspace/akeneo/pcd15mo'
+alias pcd15mow='open http://pcd15mo.dev'
+
+alias ped16='cd /Users/Samir/Workspace/akeneo/ped16'
+alias ped16w='open http://ped16.dev'
+alias ped16mo='cd /Users/Samir/Workspace/akeneo/ped16mo'
+alias ped16mow='open http://ped16mo.dev'
+
+alias pcd16='cd /Users/Samir/Workspace/akeneo/pcd16'
+alias pcd16w='open http://pcd16.dev'
+alias pcd16mo='cd /Users/Samir/Workspace/akeneo/pcd16mo'
+alias pcd16mow='open http://pcd16mo.dev'
+
+alias pcd17='cd /Users/Samir/Workspace/akeneo/pcd17'
+alias pcd17w='open http://pcd17.dev'
+alias pcd17mo='cd /Users/Samir/Workspace/akeneo/pcd17mo'
+alias pcd17mow='open http://pcd17mo.dev'
+
+alias ped17='cd /Users/Samir/Workspace/akeneo/ped17'
+alias ped17w='open http://ped17.dev'
+alias ped17mo='cd /Users/Samir/Workspace/akeneo/ped17mo'
+alias ped17mow='open http://ped17mo.dev'
+
+alias sfpip='sf pim:install --env=prod --force'
+alias sfpib='sf pim:install --env=behat --force'
+#alias docker_start='. "/Applications/Docker/Docker Quickstart Terminal.app/Contents/Resources/Scripts/start.sh"'
+
+# Git aliases
+alias gd='git diff --color | sed "s/^\([^-+ ]*\)[-+ ]/\\1/" | less -r'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gco='git checkout'
+alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
+alias gst='git status'
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
+alias gpush='git push origin HEAD'
+
+# PHP aliases
+alias phpspec='bin/phpspec'
+alias phpunit='bin/phpunit'
